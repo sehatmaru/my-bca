@@ -65,7 +65,9 @@ const PersonalCard = (props: {
             <Text style={{ fontSize: 12, fontWeight: "500", color: "#fff" }}>
               {props.accountNumber}
             </Text>
-            <FontAwesome6 name="copy" size={14} color="#fff" />
+            <TouchableOpacity>
+              <FontAwesome6 name="copy" size={14} color="#fff" />
+            </TouchableOpacity>
           </View>
         </View>
       </LinearGradient>
@@ -131,7 +133,7 @@ const PersonalCard = (props: {
           </TouchableOpacity>
         </View>
         <View style={{ borderColor: "#dedede", borderWidth: 0.5 }}></View>
-        <View
+        <TouchableOpacity
           style={{
             paddingTop: 10,
             flexDirection: "row",
@@ -143,7 +145,7 @@ const PersonalCard = (props: {
           <Text style={{ color: "#0d5d9a", fontWeight: "500", fontSize: 12 }}>
             Account Transactions
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

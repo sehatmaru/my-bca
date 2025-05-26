@@ -16,6 +16,7 @@ import {
   View,
 } from "react-native";
 import Card from "./components/card";
+import CurrencyExchangeRates from "./components/currency-exchange-rates";
 import FinancialDiary from "./components/financial-diary";
 import Menus from "./components/menus";
 import PersonalCard from "./components/personal-card";
@@ -145,11 +146,13 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                <Text
-                  style={{ color: "#fff", fontSize: 12, fontWeight: "bold" }}
-                >
-                  Click to Win
-                </Text>
+                <TouchableOpacity>
+                  <Text
+                    style={{ color: "#fff", fontSize: 12, fontWeight: "bold" }}
+                  >
+                    Click to Win
+                  </Text>
+                </TouchableOpacity>
                 <FontAwesome6 name="angle-right" size={16} color="#fff" />
               </View>
             </View>
@@ -161,8 +164,9 @@ const Home = () => {
               borderTopEndRadius: 20,
               backgroundColor: "#f4f7fc",
               marginTop: -15,
-              marginBottom: 500,
-              padding: 20,
+              paddingHorizontal: 20,
+              paddingTop: 20,
+              paddingBottom: Platform.OS === "android" ? "55%" : "40%",
             }}
           >
             <Menus />
@@ -179,6 +183,33 @@ const Home = () => {
             <Card />
 
             <FinancialDiary />
+
+            <CurrencyExchangeRates />
+
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                columnGap: 10,
+                borderRadius: 40,
+                borderWidth: 1,
+                borderColor: "#154d84",
+                padding: 15,
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 20,
+              }}
+            >
+              <FontAwesome6 name="shapes" color="#154d84" size={22} />
+              <Text
+                style={{
+                  color: "#154d84",
+                  fontSize: 16,
+                  letterSpacing: 1,
+                }}
+              >
+                Edit Widgets
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

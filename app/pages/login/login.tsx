@@ -63,7 +63,11 @@ const Login = () => {
 
   return (
     <LinearGradient
-      colors={["#76bbf3", "##3ea2c1", "##29b9b7"]}
+      colors={[
+        "rgba(230,242,254,255)",
+        "rgba(252,253,255,255)",
+        "rgba(255,255,255,255)",
+      ]}
       style={styles.container}
     >
       <View
@@ -122,7 +126,6 @@ const Login = () => {
           width: "80%",
           borderRadius: 10,
           flexDirection: "row",
-          justifyContent: "space-evenly",
           backgroundColor: "#f2f9ff",
           borderWidth: 1,
           borderColor: "#e2f2ff",
@@ -197,6 +200,7 @@ const QuickMenu = (props: { title: string; icon: any }) => {
   return (
     <TouchableOpacity
       style={{
+        flex: 1,
         alignItems: "center",
       }}
     >
