@@ -1,5 +1,6 @@
 import AdsCarousel from "@/app/components/ads-carousel/ads-carousel";
 import { AuthContext } from "@/app/context/auth-context";
+import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
@@ -47,6 +48,30 @@ const otherMenus = [
     id: 3,
     title: "BSya",
     subTitle: "BCA Syariah",
+    icon: "happy",
+  },
+  {
+    id: 4,
+    title: "KKB BCA",
+    subTitle: "Virtual Mail",
+    icon: "happy",
+  },
+  {
+    id: 5,
+    title: "BCA Sekuritas",
+    subTitle: "",
+    icon: "happy",
+  },
+  {
+    id: 6,
+    title: "BCA Remittance",
+    subTitle: "",
+    icon: "happy",
+  },
+  {
+    id: 7,
+    title: "Credit Card",
+    subTitle: "Application",
     icon: "happy",
   },
 ];
@@ -190,6 +215,19 @@ const Login = () => {
               icon={menu.icon}
             />
           ))}
+          <TouchableOpacity
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              height: 50,
+              borderWidth: 1,
+              borderColor: "#e2f2ff",
+              borderRadius: 10,
+              padding: 15,
+            }}
+          >
+            <FontAwesome6 name="plus" size={14} color="#005baa" />
+          </TouchableOpacity>
         </ScrollView>
       </View>
     </LinearGradient>
@@ -246,7 +284,9 @@ const OtherMenu = (props: { title: string; subTitle: string; icon: any }) => {
       </LinearGradient>
       <View style={{ flexDirection: "column", marginLeft: 10 }}>
         <Text style={{ fontSize: 14 }}>{props.title}</Text>
-        <Text style={{ fontSize: 14 }}>{props.subTitle}</Text>
+        {props.subTitle !== "" && (
+          <Text style={{ fontSize: 14 }}>{props.subTitle}</Text>
+        )}
       </View>
     </TouchableOpacity>
   );
