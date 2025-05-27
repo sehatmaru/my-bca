@@ -22,12 +22,14 @@ import Menus from "./components/menus";
 import PersonalCard from "./components/personal-card";
 import Pockets from "./components/pockets";
 
+const data = {
+  username: "John Doe",
+  accountNumber: "555-555-5555",
+  accountBalance: 99999999,
+};
+
 const Home = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
-
-  const username = "John Doe";
-  const accountNumber = "555-555-5555";
-  const accountBalance = 99999999;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -75,13 +77,13 @@ const Home = () => {
                 fontWeight: "bold",
               }}
             >
-              {username}
+              {data.username}
             </Text>
           </View>
 
           <PersonalCard
-            accountNumber={accountNumber}
-            accountBalance={accountBalance}
+            accountNumber={data.accountNumber}
+            accountBalance={data.accountBalance}
           />
         </View>
 

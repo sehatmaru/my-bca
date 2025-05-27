@@ -50,7 +50,14 @@ const ForYou = () => {
           borderTopStartRadius: 25,
         }}
       >
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            minWidth: "100%",
+            flexDirection: "row",
+          }}
+        >
           <TouchableOpacity
             style={{
               flex: 1,
