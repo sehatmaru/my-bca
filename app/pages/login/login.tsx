@@ -4,6 +4,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
+import { Link, router } from "expo-router";
 import React, { useContext } from "react";
 import {
   ScrollView,
@@ -84,6 +85,7 @@ const Login = () => {
   const handleLogin = async () => {
     await AsyncStorage.setItem("isLoggedIn", "true");
     setIsLoggedIn(true);
+    router.push("/(tabs)");
   };
 
   return (
@@ -183,20 +185,22 @@ const Login = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity>
-        <View
-          style={{ flexDirection: "row", columnGap: 5, alignItems: "center" }}
-        >
-          <Ionicons
-            name="information-circle-outline"
-            size={20}
-            color="#005baa"
-          />
-          <Text style={{ color: "#005baa", fontSize: 12, fontWeight: "500" }}>
-            About myBCA
-          </Text>
-        </View>
-      </TouchableOpacity>
+      <Link href={"/pages/login/about"} push asChild>
+        <TouchableOpacity>
+          <View
+            style={{ flexDirection: "row", columnGap: 5, alignItems: "center" }}
+          >
+            <Ionicons
+              name="information-circle-outline"
+              size={20}
+              color="#005baa"
+            />
+            <Text style={{ color: "#005baa", fontSize: 12, fontWeight: "500" }}>
+              About myBCA
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </Link>
 
       <View style={{ marginTop: 20, width: "100%", height: "10%" }}>
         <ScrollView

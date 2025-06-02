@@ -4,6 +4,7 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
 import React, { useContext } from "react";
 import {
   Image,
@@ -59,7 +60,7 @@ const Home = () => {
           <TouchableOpacity>
             <AntDesign name="setting" size={24} color="#fff" />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setIsLoggedIn(false)}>
+          <TouchableOpacity onPress={() => router.dismissAll()}>
             <MaterialIcons name="logout" size={24} color="#fff" />
           </TouchableOpacity>
         </View>
