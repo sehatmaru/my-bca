@@ -21,7 +21,7 @@ export default function AboutScreen() {
           marginTop: Platform.OS === "android" ? 50 : 0,
         }}
       >
-        <Link href={"/pages/login/login"} dismissTo asChild>
+        <Link href={"/login"} dismissTo asChild>
           <TouchableOpacity>
             <FontAwesome6 name="angle-left" size={32} color="#fff" />
           </TouchableOpacity>

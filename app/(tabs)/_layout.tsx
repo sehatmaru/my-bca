@@ -14,7 +14,7 @@ export default function TabLayout() {
   }
 
   if (!authContext.isLoggedIn) {
-    return <Redirect href={"/pages/login/login"} />;
+    return <Redirect href={"/login"} />;
   }
 
   return (

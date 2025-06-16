@@ -6,10 +6,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import React, { useContext } from "react";
 import { Platform, Text, View } from "react-native";
 import { AuthContext, AuthProvider } from "./context/auth-context";
+import Login from "./login";
 import Activity from "./pages/activity/activity";
 import ForYou from "./pages/for-you/for-you";
 import Home from "./pages/home/home";
-import Login from "./pages/login/login";
 import MyAccount from "./pages/my-account/my-account";
 import Qris from "./pages/qris/qris";
 

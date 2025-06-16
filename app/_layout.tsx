@@ -11,7 +11,7 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
-            name="pages/login/login"
+            name="login"
             options={{ headerShown: false, animation: "ios_from_left" }}
           />
           <Stack.Screen
