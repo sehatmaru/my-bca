@@ -2,9 +2,8 @@ import AdsCarousel from "@/app/components/ads-carousel/ads-carousel";
 import { AuthContext } from "@/app/context/auth-context";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { LinearGradient } from "expo-linear-gradient";
-import { Link, router } from "expo-router";
+import { Link } from "expo-router";
 import React, { useContext } from "react";
 import {
   ScrollView,
@@ -78,15 +77,9 @@ const otherMenus = [
 ];
 
 const Login = () => {
-  const { setIsLoggedIn } = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
   const fullName = "John Doe";
   const username = "jo****e";
-
-  const handleLogin = async () => {
-    await AsyncStorage.setItem("isLoggedIn", "true");
-    setIsLoggedIn(true);
-    router.push("/(tabs)");
-  };
 
   return (
     <LinearGradient
@@ -164,7 +157,7 @@ const Login = () => {
         ))}
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+      <TouchableOpacity style={styles.button} onPress={authContext.logIn}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
@@ -178,7 +171,7 @@ const Login = () => {
         <Text style={{ fontSize: 14, color: "#a3a7aa", marginBottom: 5 }}>
           Want to Login with a different account?
         </Text>
-        <TouchableOpacity onPress={handleLogin}>
+        <TouchableOpacity>
           <Text style={{ color: "#005baa", fontWeight: "bold" }}>
             Change Account
           </Text>

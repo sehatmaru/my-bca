@@ -1,11 +1,22 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Octicons from "@expo/vector-icons/Octicons";
 import { LinearGradient } from "expo-linear-gradient";
-import { Tabs } from "expo-router";
-import React from "react";
+import { Redirect, Tabs } from "expo-router";
+import React, { useContext } from "react";
 import { Platform, Text, View } from "react-native";
+import { AuthContext } from "../context/auth-context";
 
 export default function TabLayout() {
+  const authContext = useContext(AuthContext);
+
+  if (!authContext.isReady) {
+    return null;
+  }
+
+  if (!authContext.isLoggedIn) {
+    return <Redirect href={"/pages/login/login"} />;
+  }
+
   return (
     <Tabs
       screenOptions={{
